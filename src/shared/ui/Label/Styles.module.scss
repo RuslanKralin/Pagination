@@ -1,29 +1,19 @@
 @import 'shared/styles/colors';
 
-.inpyt {
+.content {
   width: 100%;
   padding: 0.571rem 1rem;
-  border: $border-input;
+  border: $bg-light-grey;
   border-radius: 0.357rem;
   max-height: 35.25px;
+  background-color: $bg-input;
 }
 
 .label {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
   color: $text-grey;
   font-size: 0.8rem;
   font-weight: 600;
-}
-
-.star {
-  color: tomato;
-  font-size: 1rem;
-}
-
-.error {
-  color: tomato;
-  display: flex;
-  justify-content: end;
 }

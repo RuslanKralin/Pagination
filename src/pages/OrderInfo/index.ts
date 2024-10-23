@@ -1,1 +1,2 @@
-export { default as CreateTransportOrder } from './CreateTransportOrder'
+export { TransportOrderInfo } from './TransportOrderInfo'
+export { MailOrderInfo } from './MailOrderInfo'
