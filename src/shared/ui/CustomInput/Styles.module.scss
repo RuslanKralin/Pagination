@@ -1,0 +1,27 @@
+.inpyt {
+  width: 100%;
+  padding: 0.571rem 1rem;
+  border: 1px solid #d8d6de;
+  border-radius: 0.357rem;
+  max-height: 35.25px;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+  color: #4e5154;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.star {
+  color: tomato;
+  font-size: 1rem;
+}
+
+.error {
+  color: tomato;
+  display: flex;
+  justify-content: end;
+}

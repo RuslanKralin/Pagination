@@ -1,0 +1,57 @@
+@import 'shared/styles/colors';
+
+.wrapper {
+  width: 95%;
+  max-width: 1440px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+h1 {
+  font-family: 'Inter', Helvetica, Arial, serif;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #0b409b;
+  text-decoration: underline;
+  font-weight: 600 !important;
+  font-size: 1.53rem;
+  // font-size: calc(1.278rem + 0.336vw);
+}
+
+.cards_wrapper {
+  width: 100%;
+  height: auto;
+  border-radius: 0.428rem;
+  border: 0 solid rgba(16, 23, 40, 0.125);
+  box-shadow: 0 4px 24px 0 rgba(16, 23, 40, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+}
+
+.crumbs {
+  display: flex;
+  gap: 0.5rem;
+  align-items: end;
+}
+
+.crumbs_text {
+  font-size: 1rem;
+  color: #596778;
+}
+
+.line {
+  height: 1px;
+  background-color: $bg-light-grey;
+}

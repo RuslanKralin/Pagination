@@ -1,0 +1,45 @@
+.container {
+  // display: flex;
+  // align-items: center;
+  gap: 1rem;
+  border-radius: 4px;
+  width: 230px;
+  padding: 0.5rem;
+  transition: background-color 0.3s;
+  transition: padding 0.3s;
+  margin-top: 1rem;
+  // font-size: 1.1rem;
+}
+
+.active {
+  background-color: #0b409b;
+}
+
+// .container:active img {
+//   filter: brightness(0) invert(1);
+// }
+
+.container:hover {
+  padding-left: 0.8rem;
+}
+
+.btnItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon_text {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.startItemsActive {
+  color: white;
+}
+
+.startItemsActive img {
+  filter: brightness(0) invert(1);
+  transition: fill 0.3s;
+}

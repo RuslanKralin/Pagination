@@ -1,0 +1,72 @@
+@import 'shared/styles/colors';
+
+.input_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.input_wrapper input {
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 130px;
+  height: 38px;
+  min-height: 38px;
+  min-width: 130px;
+  transition: 100ms;
+  background-color: $bg-input;
+  border-color: $border-input-color;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  outline: 0px !important;
+}
+
+.radio_input {
+  width: auto !important;
+}
+
+.arrow_icon {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 12px; /* Позиционирует иконку справа внутри инпута */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+input.input_value {
+  color: $text-grey;
+  font-weight: 600; /* Задает синий цвет текста для значения input */
+}
+
+.modal_window_wrapper {
+  position: absolute;
+  top: 110%;
+  transition: 100ms;
+  background-color: $bg-input;
+  border-color: $border-input-color;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  min-width: 130px;
+  color: $bg-grey;
+  font-weight: 500;
+}
+
+.window_item {
+  width: 100%;
+  display: flex;
+  align-self: start;
+  padding: 0.7rem 0.3rem;
+  cursor: pointer;
+}
+
+.active {
+  background-color: $bg-input-active !important;
+  color: $bg-white;
+}
+
+.window_item:hover {
+  background-color: $bg-input-hover;
+}

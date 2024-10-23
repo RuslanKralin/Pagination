@@ -1,0 +1,30 @@
+@import 'shared/styles/colors';
+
+.input_wrapper {
+  display: flex;
+  align-items: center;
+  background-color: $bg-input;
+  border-color: $border-input-color;
+
+  padding: 2rem 1rem;
+}
+
+.input {
+  width: 100%;
+  border-radius: 0px 4px 4px 0px;
+  border-color: $border-input-color;
+  border: 1px $border-input-color solid;
+  padding: 0 1rem;
+}
+
+.img {
+  padding: 0.38rem;
+  border: 1px $border-input-color solid;
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}

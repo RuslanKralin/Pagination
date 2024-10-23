@@ -1,0 +1,34 @@
+@import 'shared/styles/colors';
+
+.wrapper {
+  width: 100%;
+  height: 200px;
+
+  border-radius: 0.428rem;
+  border: $border;
+  box-shadow: $shadow;
+}
+
+.content {
+  text-align: left;
+
+  h3 {
+    color: $text-grey;
+  }
+}
+
+.line {
+  width: 200px;
+  height: 1.5px;
+  color: $text-red;
+}
+
+.input_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.input {
+  width: 22%;
+}

@@ -1,0 +1,36 @@
+@import 'shared/styles/colors';
+
+.wrapper {
+  width: 95%;
+  max-width: 1440px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+h2 {
+  font-family: 'Inter', Helvetica, Arial, serif;
+  font-weight: 500;
+  line-height: 1.2;
+  color: $text-blue;
+  font-weight: 600 !important;
+  font-size: 1.53rem;
+}
+
+.table_wrapper {
+  width: 100%;
+  height: auto;
+  border-radius: 0.428rem;
+  border: $border;
+  box-shadow: $shadow;
+}
