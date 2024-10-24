@@ -1,8 +1,7 @@
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
-import type { GroupBase, OptionsOrGroups } from 'react-select'
-
-import { AsyncPaginate } from 'react-select-async-paginate'
+import { AsyncPaginate, LoadOptions } from 'react-select-async-paginate'
+import { GroupBase, OptionsOrGroups } from 'react-select'
 
 const URL: string = 'https://api.tktat.by/api/v1/country/townlist/'
 
@@ -19,69 +18,58 @@ interface ICity {
 function LibPaginate() {
   const [cities, setCities] = useState<ICity[]>([])
   const [page, setPage] = useState<number>(1)
-  const [value, onChange] = useState<OptionType | null>(null)
+  const [value, setValue] = useState<OptionType | null>(null)
 
-  async function getCities() {
-    try {
-      const response = await axios.get(URL, {
-        params: {
-          name: value,
-          page: page,
-          page_size: 20
-        }
-      })
-      setCities([...cities, ...response.data.results])
-    } catch (error) {
-      console.error(error)
-    }
-  }
-  useEffect(() => {
-    getCities()
-  }, [])
+  // async function getCities(name?: string) {
+  //   try {
+  //     const response = await axios.get(URL, {
+  //       params: {
+  //         name: name,
+  //         page: page,
+  //         page_size: 20
+  //       }
+  //     })
+  //     setCities((prevCities) => [...prevCities, ...response.data.results])
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
 
-  const options = cities.map((city: ICity) => ({
-    value: city.name,
-    label: city.name
-  }))
-
-  console.log(options)
-  console.log(page)
-
-  const loadOptions = async (
+  const loadOptions: LoadOptions<OptionType, GroupBase<OptionType>, any> = async (
     search: string,
-    prevOptions: OptionsOrGroups<OptionType, GroupBase<OptionType>>
+    prevOptions: OptionsOrGroups<OptionType, any>,
+    { page }: { page: number }
   ) => {
-    await getCities()
-    setPage((prev) => prev + 1)
-
-    let filteredOptions: OptionType[]
-
-    if (!search) {
-      filteredOptions = options
-    } else {
-      const searchLower = search.toLowerCase()
-
-      filteredOptions = options.filter(({ label }) => label.toLowerCase().includes(searchLower))
-    }
-
-    const hasMore = true
-    const slicedOptions = filteredOptions.slice(prevOptions.length, prevOptions.length + 10)
+    const response = await axios.get(URL, {
+      params: {
+        name: search,
+        page: page,
+        page_size: 20
+      }
+    })
+    const hasMore = !!response.data.next
 
     return {
-      options: slicedOptions,
-      hasMore
+      options: response.data.results.map((city: ICity) => ({
+        value: city.name,
+        label: city.name
+      })),
+      hasMore,
+      additional: {
+        page: page + 1
+      }
     }
   }
 
-  console.log(value)
   return (
     <div>
       <h1>react-select-async-paginate</h1>
       <AsyncPaginate
+        debounceTimeout={1000}
         value={value}
         loadOptions={loadOptions}
         menuPlacement={'auto'}
-        onChange={(e) => onChange(e)}
+        onChange={(selectedOption) => setValue(selectedOption)}
         additional={{ page: 1 }}
         // getOptionLabel={(e) => e.name}
         // getOptionValue={(e) => e.id}
